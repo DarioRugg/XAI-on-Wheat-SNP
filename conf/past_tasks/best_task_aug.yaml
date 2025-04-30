@@ -1,0 +1,7 @@
+defaults:
+  - /clearml_task@_here_: gpu_task
+  - _self_
+
+task_name: "best task with augmentaions"
+# id: 158217c9a34d463288534e329d207e50
+id: 04be467f5e8841a9b12d5c789fcc03e5

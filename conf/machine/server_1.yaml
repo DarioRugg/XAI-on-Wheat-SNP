@@ -1,0 +1,6 @@
+defaults:
+  - /gpu_queues
+  - _self_
+
+
+workers: 4

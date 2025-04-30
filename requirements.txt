@@ -1,0 +1,16 @@
+matplotlib
+jupyter
+hydra-core
+clearml
+clearml-agent
+optuna
+hpbandster
+seaborn
+scikit-learn
+tables
+shap
+
+# last version compatible with GPU server 1 version
+torch == 2.0.0
+lightning
+  

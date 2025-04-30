@@ -1,0 +1,19 @@
+defaults:
+  - clearml_task: cpu_task
+  - execution: remote
+  - machine: server_1
+  - experiment: hpo_standard
+  - _self_
+
+hpo_algo: "bayes"
+target_project_folder: "hpo_tasks"
+
+clearml_task:
+  task_name: "HPO"
+  queue_name: "services"
+
+target_column: "2016_Protein"
+time_limit_days: 2.5
+
+machine:
+  gpu_queues_id: 3

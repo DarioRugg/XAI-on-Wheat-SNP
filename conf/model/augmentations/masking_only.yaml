@@ -1,0 +1,4 @@
+apply_masking: True
+apply_noising: False
+mask_prob: 0.1
+noise_prob: 0.05

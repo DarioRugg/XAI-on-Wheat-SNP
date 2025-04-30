@@ -1,0 +1,5 @@
+# @package _global_
+
+clearml_task:
+  project_folders: "drafts"
+  execution_type: "draft"

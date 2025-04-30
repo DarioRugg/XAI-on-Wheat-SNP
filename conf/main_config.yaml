@@ -1,0 +1,17 @@
+defaults:
+  - model: mlp
+  - clearml_task: gpu_task
+  - dataset: data_and_targets
+  # - cross_validation: hpo_first_fold
+  - machine: server_1
+  # - execution: draft
+  - experiment: test_best_params
+  # - experiment: draft_for_hpo
+  - _self_
+
+seed: 1234
+
+target_column: '2016_Yield'
+
+machine:
+  gpu_queues_id: 2

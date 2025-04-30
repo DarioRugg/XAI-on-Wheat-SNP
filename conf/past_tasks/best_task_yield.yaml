@@ -1,0 +1,6 @@
+defaults:
+  - /clearml_task@_here_: gpu_task
+  - _self_
+
+task_name: "best task for yield prediction"
+id: 16cc2c4f06424405b3c732884ba730a9

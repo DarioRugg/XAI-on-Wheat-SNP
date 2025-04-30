@@ -1,0 +1,12 @@
+defaults:
+  - config_defaults
+  - _self_
+
+args: "--env CLEARML_AGENT_SKIP_PIP_VENV_INSTALL=1 \
+        --env CLEARML_AGENT_SKIP_PYTHON_ENV_INSTALL=1 \
+        --env CLEARML_AGENT_GIT_USER={bot_name} \
+        --env CLEARML_AGENT_GIT_PASS={bot_token} \
+        --mount type=bind,source=/srv/nfs-data/ruggeri/clearml_bot_credentials.json,target=/clearml_conf/clearml_bot_credentials.json \
+        --runtime=nvidia --ipc=host"
+queue_name: aai-gpu-01-2080ti:{gpu_id}-standard
+accelerator: gpu

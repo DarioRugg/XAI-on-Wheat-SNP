@@ -1,0 +1,12 @@
+defaults:
+  - clearml_task: cpu_task
+  - machine: server_1
+  - execution: local
+  - past_tasks@base_task: best_task_aug
+  - _self_
+
+clearml_task:
+  task_name: explainability
+
+machine:
+  gpu_queues_id: 0

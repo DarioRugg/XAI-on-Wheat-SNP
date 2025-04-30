@@ -1,0 +1,27 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/docker-existing-dockerfile
+{
+	"name": "DL_Wheat_conference R container",
+	
+	"image": "dlwheatwithclearml:r",
+	
+	"runArgs": ["--name=rugg-dlwheatconference-r"],
+
+	"containerUser": "ruggeri",
+
+	"mounts": [{"source": "/srv/nfs-data/ruggeri/datasets/DL_Wheat_dataset/", "target": "/data/", "type": "bind"},
+			   {"source": "/home/ruggeri/keys_for_container/", "target": "/home/ruggeri/.ssh/", "type": "bind"}],
+
+	"customizations":{
+		"vscode":{
+			"extensions": ["christian-kohler.path-intellisense",
+						   "zhang-renyang.chat-gpt",
+						   "mhutchie.git-graph", 
+						   "grapecity.gc-excelviewer", 
+						   "mechatroner.rainbow-csv",
+						   "eamodio.gitlens",
+						   "reditorsupport.r"
+                          ]
+		}
+	}
+}

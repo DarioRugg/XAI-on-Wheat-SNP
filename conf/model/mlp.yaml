@@ -1,0 +1,16 @@
+defaults:
+ - augmentations: ready
+ - _self_
+
+
+name: mlp
+num_layers: 3
+first_layer_dim: 256
+learning_rate: 0.001
+dropout_prob: 0.2
+batch_norm: false
+weight_decay: 0.05
+batch_size: 256
+optimizer: sgd
+lr_scheduler: plateau
+max_epochs: 600

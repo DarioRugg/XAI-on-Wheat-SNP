@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - /cross_validation: hpo_first_fold
+  - /execution: draft
+  - /past_tasks@tuned_task: best_task_aug
+  - _self_
+
+clearml_task:
+  task_name: "MLP draft for HPO with best params"

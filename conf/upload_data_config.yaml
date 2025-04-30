@@ -1,0 +1,19 @@
+defaults:
+  - clearml_task: cpu_task
+  - dataset@input_dataset: filtered
+  - dataset@output_dataset: data_and_targets
+  - machine: server_1
+  - execution: local
+  - _self_
+
+seed: 1234
+
+columns_to_drop: ["Taxa", "Family"]
+target_columns: ['2014_Yield', '2014_TSTWT', '2014_Protein',
+       '2014_Height', '2014_DTH', '2015_Yield', '2015_TSTWT', '2015_Protein',
+       '2015_Height', '2015_DTH', '2016_Yield', '2016_TSTWT', '2016_Protein',
+       '2016_Height', '2016_DTH']
+
+clearml_task:
+  task_name: "Dataset Upload (Data and Targets)"
+  project_folders: "datasets"

@@ -1,0 +1,8 @@
+project: "e-muse/DL_Wheat_conference"
+project_folders: "main"
+image: rugg/dlwheatconference:latest
+
+task_name: ???
+
+tags: []
+execution_type: "remote"

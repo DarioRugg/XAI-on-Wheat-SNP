@@ -1,0 +1,6 @@
+# @package _global_
+
+defaults:
+  - /past_tasks@base_task: draft_task_for_hpo
+
+param_space: "complete"

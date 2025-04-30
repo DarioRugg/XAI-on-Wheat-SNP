@@ -1,0 +1,6 @@
+defaults:
+ - standardization@_here_: min_max
+ - _self_
+
+name: Dataset Upload (Data and Targets)
+project: "e-muse/DL_Wheat_conference/datasets"

@@ -1,0 +1,6 @@
+defaults:
+  - /clearml_task@_here_: cpu_task
+  - _self_
+
+project_folders: "main"
+task_name: "HPO"

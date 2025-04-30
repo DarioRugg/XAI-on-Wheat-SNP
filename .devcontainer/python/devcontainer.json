@@ -1,0 +1,31 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/docker-existing-dockerfile
+{
+	"name": "DL_Wheat_conference Python container",
+	
+	"image": "rugg/dlwheatconference:latest",
+	
+	"runArgs": ["--name=rugg-dlwheatconference", "--runtime=nvidia"],
+
+	"containerUser": "ruggeri",
+	
+	"mounts": [{"source": "/srv/nfs-data/ruggeri/datasets/DL_Wheat_dataset/", "target": "/data/", "type": "bind"},
+			   {"source": "/home/ruggeri/keys_for_container/", "target": "/home/ruggeri/.ssh/", "type": "bind"},
+			   {"source": "/srv/nfs-data/ruggeri/clearml_bot_credentials.json", "target": "/clearml_conf/clearml_bot_credentials.json", "type": "bind"},
+			   {"source": "/srv/nfs-data/ruggeri/clearml.conf", "target": "/home/ruggeri/clearml.conf", "type": "bind"}],
+
+	"customizations":{
+		"vscode":{
+			"extensions": ["donjayamanne.python-extension-pack",
+						   "christian-kohler.path-intellisense",
+						   "zhang-renyang.chat-gpt",
+						   "github.copilot",
+						   "mhutchie.git-graph", 
+						   "grapecity.gc-excelviewer", 
+						   "mechatroner.rainbow-csv",
+						   "ms-toolsai.jupyter",
+						   "eamodio.gitlens"
+                          ]
+		}
+	}
+}

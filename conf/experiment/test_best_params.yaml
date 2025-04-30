@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - /cross_validation: test
+  - /execution: remote
+  - /past_tasks@tuned_task: last_hpo
+  - _self_
+
+clearml_task:
+  task_name: "Test on kfld test splits"

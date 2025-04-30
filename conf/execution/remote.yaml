@@ -1,0 +1,4 @@
+# @package _global_
+
+clearml_task:
+  execution_type: "remote"

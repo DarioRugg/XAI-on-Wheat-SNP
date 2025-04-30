@@ -1,0 +1,5 @@
+pandas
+jupyter
+
+clearml
+clearml-agent

@@ -1,0 +1,12 @@
+# @package _global_
+
+defaults:
+  - /past_tasks@base_task: best_task_no_aug
+
+
+clearml_task:
+  task_name: "HPO from best task"
+
+param_space: "augmentations"
+
+time_limit_days: 1.5
