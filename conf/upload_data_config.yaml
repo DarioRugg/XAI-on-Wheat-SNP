@@ -1,6 +1,6 @@
 defaults:
   - clearml_task: cpu_task
-  - dataset@input_dataset: filtered
+  - dataset@input_dataset: preprocessed
   - dataset@output_dataset: data_and_targets
   - machine: server_1
   - execution: local

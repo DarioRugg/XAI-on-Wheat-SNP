@@ -1,0 +1,4 @@
+
+name: Dataset Processed
+project: "e-muse/DL_Wheat_with_clearml"
+path: "/data/"

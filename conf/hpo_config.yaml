@@ -12,7 +12,7 @@ clearml_task:
   task_name: "HPO"
   queue_name: "services"
 
-target_column: "2016_Protein"
+target_column: "2016_Yield"
 time_limit_days: 2.5
 
 machine:

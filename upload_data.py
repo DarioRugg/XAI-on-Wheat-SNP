@@ -61,26 +61,33 @@ def main(cfg: DictConfig):
     
     set_task_execution(task_cfg=cfg.clearml_task, machine_cfg=cfg.machine, clearml_task=task)
     
-    data_df = get_data(dataset_cfg=cfg.input_dataset)
-    
     data_dir_to_upload = join("tmp", "data_to_upload_to_clearml")
-    # ==============================
-    # SECTION: Data and target
-    # ==============================
     
-    data_df = data_df.set_index("Row.names")
-    
-    if "columns_to_drop" in cfg.keys():
-        data_df = data_df.drop(columns=cfg.columns_to_drop)
-    
-    x_df = data_df.drop(columns=cfg.target_columns)
-    targets_df = data_df.loc[:, cfg.target_columns]
-    
-    # Remove the directory and its contents, then recreate the directory
-    clear_dir_content(data_dir_to_upload)
-    
-    x_df.to_hdf(join(data_dir_to_upload, 'x_df.h5'), key="data", mode='w')
-    targets_df.to_csv(join(data_dir_to_upload, 'targets_df.csv'))
+    if cfg.input_dataset.name in ["Dataset split", "Dataset Filtered", "Dataset Upload (Data and Targets)"]:
+        data_df = get_data(dataset_cfg=cfg.input_dataset)
+        # ==============================
+        # SECTION: Data and target
+        # ==============================
+        
+        data_df = data_df.set_index("Row.names")
+        
+        if "columns_to_drop" in cfg.keys():
+            data_df = data_df.drop(columns=cfg.columns_to_drop)
+        
+        x_df = data_df.drop(columns=cfg.target_columns)
+        targets_df = data_df.loc[:, cfg.target_columns]
+        
+        # Remove the directory and its contents, then recreate the directory
+        clear_dir_content(data_dir_to_upload)
+        
+        x_df.to_hdf(join(data_dir_to_upload, 'x_df.h5'), key="data", mode='w')
+        targets_df.to_csv(join(data_dir_to_upload, 'targets_df.csv'))
+        
+    elif cfg.input_dataset.name == 'Dataset Processed':
+        shutil.copytree(os.path.join(cfg.input_dataset.path, 'x_df.h5'), os.path.join(data_dir_to_upload, 'x_df.h5'))
+        shutil.copytree(os.path.join(cfg.input_dataset.path, 'targets_df.csv'), os.path.join(data_dir_to_upload, 'targets_df.csv'))
+    else:
+        raise ValueError(f"Dataset name {cfg.input_dataset.name} not recognized")
     
     dataset = Dataset.create(dataset_name=cfg.output_dataset.name, dataset_project=cfg.output_dataset.project, use_current_task=True, 
                              parent_datasets=[get_dataset_instance(dataset_cfg=cfg.input_dataset)])

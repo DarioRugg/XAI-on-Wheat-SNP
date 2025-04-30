@@ -166,7 +166,7 @@ cython_debug/
 
 dl_wheat_conference.Rproj
 data_exploration.ipynb
-Data/
+# data/
 data_for_clearml/
 data_for_clearml_backup/
 temp.h5
